@@ -1,0 +1,554 @@
+/* ------------------- BASE ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ------------------- TOP BAR ------------------- */
+.kpop {
+  background: black;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.kpop h1 {
+  font-size: 24px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff4d6d;
+}
+
+.navbar .icon-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.navbar .icon-cart:hover {
+  color: red;
+}
+
+.navbar .icon-cart span {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4d6d;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+}
+
+/* ------------------- HERO / HOME SECTION ------------------- */
+.seven {
+  height: 90vh;
+  background-image: url("jun.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.seven::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  z-index: 1;
+}
+
+.seven-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 20px;
+}
+
+.seven-text h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.seven-text h2 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* ------------------- BANNER ------------------- */
+.banner {
+  background: black;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ------------------- SLIDESHOW ------------------- */
+.slideshow-container {
+  max-width: 1800px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.mySlide {
+  display: none;
+  position: relative;
+}
+
+.mySlide img {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.mySlide h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+  cursor: pointer;
+  color: black;
+  text-align: center;
+  z-index: 2;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+/* Container for the grid */
+.listProduct {
+  display: grid;
+  /* Creates 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  padding: 20px;
+}
+
+
+/* The Card */
+.listProduct .item {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 25px;
+  padding: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.listProduct .item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.listProduct .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 20px 20px 30px rgba(0,0,0,0.15);
+}
+
+/* Image Handling */
+.listProduct .item img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps images uniform */
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.listProduct .item:hover img {
+  transform: scale(1.02);
+}
+
+/* Text Content */
+.listProduct .des {
+  padding: 15px 5px;
+  text-align: left;
+}
+
+.listProduct .des h5 {
+  font-size: 14px;
+  color: #606063;
+  margin-bottom: 5px;
+}
+
+.listProduct .des h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #030d0d;
+}
+
+/* Circular Floating Button */
+.listProduct .addCart {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e8f6ea;
+  color: #121212;
+  border: 1px solid #cce7d0;
+  cursor: pointer;
+  
+  /* Positioning */
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.listProduct .addCart:hover {
+  background-color:  #ff0044;;
+  color: white;
+}
+/* ------------------- CART ------------------- */
+.cartTab {
+  width: 400px;
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  inset: 0 -400px 0 auto;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+body.showCart {
+  overflow: hidden;
+}
+
+body.showCart .cartTab {
+  inset: 0 0 0 auto;
+}
+
+body.showCart .kpop {
+  transform: translateX(-250px);
+}
+
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.cartTab .btn .close {
+  background-color: gray;
+}
+
+.cartTab .btn .checkOut {
+  background-color: darkorange;
+}
+
+.cartTab .listCart {
+  overflow: auto;
+}
+
+.cartTab .listCart::-webkit-scrollbar {
+  width: 0;
+}
+
+.cartTab .listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.cartTab .listCart .item img {
+  width: 100%;
+}
+
+.cartTab .quantity span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cartTab .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: white;
+}
+
+.cartTab .quantity span:nth-child(even) {
+  background-color: black;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 1024px) {
+  .listProduct {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .seven-text h1 {
+    font-size: 28px;
+  }
+  .seven-text h2 {
+    font-size: 14px;
+  }
+
+  .mySlide img {
+    height: 250px;
+  }
+
+  .listProduct {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 10px;
+  }
+
+  .listProduct .pro {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .listProduct .pro .addCart {
+    width: 35px;
+    height: 35px;
+    bottom: 10px;
+  }
+
+  .cartTab {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .seven-text h1 {
+    font-size: 22px;
+  }
+  .seven-text h2 {
+    font-size: 12px;
+  }
+
+  .mySlide img {
+    height: 200px;
+  }
+
+  .mySlide h2 {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .navbar ul li a {
+    font-size: 11px;
+  }
+
+  .cartTab .listCart .item {
+    grid-template-columns: 50px 1fr 40px 1fr;
+    gap: 5px;
+  }
+
+  .cartTab .quantity span {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* CONTACT */
+.contact-banner {
+  position: relative;
+  height: 20vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.about {
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+/* ABOUT */
+/* ABOUT US IMAGE */
+.eight {
+  height: 90vh;
+  background-image: url("eight.jpg"); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 40vh;
+}
+
+.eight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient( rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  z-index: 1;
+}
+
+
+.eight-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2; 
+  padding: 20px;
+}
+
+.eight-text h1 {
+    font-size: 28px;
+}
+
+/* ------------------- CHECKOUT ------------------- */
+
+.checkout {
+  display: flex;               /* ensure flex layout */
+  flex-direction: column;      /* stack items vertically */
+  align-items: center;         /* center horizontally */
+  justify-content: center;     /* center vertically if needed */
+  text-align: center;
+  gap: 15px;                   /* spacing between items */
+  padding: 20px;
+}
+
+/* h4 text */
+.checkout h4 {
+  margin: 0;
+  font-size: 16px;
+  margin-top: 10px;            /* small space above text */
+}
+
+.buy {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #000;
+  color: #fff;
+  text-decoration: none;   /* remove underline */
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.buy:hover {
+  background: #ff9800;
+  color: #000;
+}
+
+/* ------------------- BACK TO TOP ------------------- */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px; /* Slightly larger for better touch/click */
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  
+  /* Flex ensures the arrow is perfectly centered */
+  display: flex; 
+  opacity: 0; /* Use opacity + visibility for smoother transitions */
+  visibility: hidden;
+  
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* This class will be toggled via JavaScript */
+#backToTop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop:hover {
+  background: #ff0044; /* Match your pink/red theme */
+  color: white;
+  transform: translateY(-5px);
+}

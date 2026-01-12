@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WesternPop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="STYLE.css">
+</head>
+<body>
+
+  <header class="kpop">
+    <div class="title">WesternPop</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#shop">SHOP</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61566828646709">CONTACT US</a></li>
+      </ul>
+      <div class="icon-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span>0</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="seven">
+    <div class="seven-text">
+      <h1>WELCOME TO WESTERNPOP SHOP</h1>
+      <h2>WHERE YOU CAN FIND YOUR FAVOURITE PHOTOCARD</h2>
+    </div>
+  </section>
+
+  <section class="banner">
+    <h2>CHECK OUT PRODUCTS WITH NO ADDITIONAL SHIPPING FEES</h2>
+  </section>
+
+  <section class="slideshow-container" id="shop">
+    <div class="mySlide fade">
+      <a href="#seventeen"><img src="seventeen.jpg" alt="Seventeen"></a>
+      <h2>CLICK ME</h2>
+    </div>
+    <div class="mySlide fade">
+      <a href="#twice"><img src="twice.jpg" alt="Twice"></a>
+      <h2>CLICK ME</h2>
+    </div>
+    <div class="mySlide fade">
+      <a href="#lesserafim"><img src="lesserafim.jpg" alt="Le Sserafim"></a>
+      <h2>CLICK ME</h2>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </section>
+
+  <section class="listProduct"></section>
+
+  <aside class="cartTab">
+    <header><h1>SHOPPING CART</h1></header>
+    <div class="listCart"></div>
+    <div class="btn">
+      <button class="close">CLOSE</button>
+      <button class="checkOut" onclick="window.location.href='checkout.html'">CHECK OUT</button>
+    </div>
+  </aside>
+
+  <section class="contact-banner" id="call">
+    <div class="overlay"></div>
+    <div class="about">
+      <h2>Contact Us</h2>
+      <p>Reserve your photocard now!</p>
+      <a href="https://www.facebook.com/profile.php?id=61566828646709" class="fb-btn" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="eight" id="about">
+    <div class="eight-text">
+      <h1>In the world of K-Pop, a photocard is more than just paper—it’s a memory. 
+        We specialize in sourcing authentic, high-quality photocards for collectors who demand the best.</h1>
+    </div>
+  </section>
+
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  
+
+  <script src="app.js"></script>
+</body>
+</html>

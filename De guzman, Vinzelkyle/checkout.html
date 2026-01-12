@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WesternPop</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - WesternPop</title>
+    <link rel="stylesheet" href="STYLE.css">
+    <style>
+        .checkout-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { text-align: center; margin-bottom: 30px; font-weight: 600; }
+        .order-list { margin-bottom: 20px; }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .order-item img { width: 60px; border-radius: 10px; }
+        .item-details { flex: 1; margin-left: 15px; }
+        .item-name { font-weight: 500; font-size: 14px; }
+        .item-price { color: #666; font-size: 13px; }
+        .summary {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .place-order-btn {
+            width: 100%;
+            padding: 15px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .place-order-btn:hover { background: #ff9800; color: #000; }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body style="background-color: #f4f4f4;">
+
+    <div class="checkout-container">
+        <h1>Your Order Summary</h1>
+        
+        <div class="order-list" id="checkoutList">
+            </div>
+
+        <div class="summary">
+            <div class="summary-row">
+                <span>Total Amount:</span>
+                <span id="finalTotal">₱0</span>
+            </div>
+        </div>
+
+        <button class="place-order-btn" onclick="confirmOrder()">PLACE ORDER</button>
+        <a href="product.html" class="back-link">Return to Shop</a>
+    </div>
+
+    <script>
+        // Data must match your app.js data
+        const listProduct = [
+            { "id": 1, "name": "SEVENTEEN SCOUPS", "price": 150, "image": "puge.jpg" },
+            { "id": 2, "name": "SEVENTEEN MINGYU", "price": 200, "image": "gyu.jpg" },
+            { "id": 3, "name": "SEVENTEEN JEONGHAN", "price": 200, "image": "han.jpg" },
+            { "id": 4, "name": "SEVENTEEN MINGHAO", "price": 200, "image": "hao.jpg" },
+            { "id": 5, "name": "TWICE MOMO", "price": 180, "image": "momo.jpg" },
+            { "id": 6, "name": "TWICE NAYEON", "price": 180, "image": "nayeon.jpg" },
+            { "id": 7, "name": "TWICE SANA", "price": 200, "image": "sana.jpg" },
+            { "id": 8, "name": "TWICE TZUYU", "price": 150, "image": "tzuyu.jpg" },
+            { "id": 9, "name": "LESSERAFIM CHAEWON", "price": 150, "image": "chae.jpg" },
+            { "id": 10, "name": "LESSERAFIM SAKURA", "price": 150, "image": "kura.jpg" },
+            { "id": 11, "name": "LESSERAFIM EUNCHAE", "price": 150, "image": "eunchae.jpg" },
+            { "id": 12, "name": "LESSERAFIM KAZUHA", "price": 150, "image": "zuha.jpg" }
+        ];
+
+        function loadCheckout() {
+            let carts = JSON.parse(localStorage.getItem('cart')) || [];
+            let listHTML = document.getElementById('checkoutList');
+            let totalHTML = document.getElementById('finalTotal');
+            let total = 0;
+
+            if (carts.length === 0) {
+                listHTML.innerHTML = '<p style="text-align:center;">Your cart is empty!</p>';
+                return;
+            }
+
+            carts.forEach(item => {
+                let product = listProduct.find(p => p.id == item.product_id);
+                if (product) {
+                    total += (product.price * item.quantity);
+                    let div = document.createElement('div');
+                    div.classList.add('order-item');
+                    div.innerHTML = `
+                        <img src="${product.image}">
+                        <div class="item-details">
+                            <div class="item-name">${product.name}</div>
+                            <div class="item-price">₱${product.price} x ${item.quantity}</div>
+                        </div>
+                        <div class="item-total">₱${product.price * item.quantity}</div>
+                    `;
+                    listHTML.appendChild(div);
+                }
+            });
+            totalHTML.innerText = '₱' + total;
+        }
+
+        function confirmOrder() {
+            alert('Order Received! Thank you for shopping with WesternPop.');
+            localStorage.removeItem('cart'); // Clears the cart
+            window.location.href = 'product.html'; // Goes back home
+        }
+
+        loadCheckout();
+    </script>
+</body>
+</html>
+
+</li>
+</div>
+
+</body>
+
+</html>
